@@ -11,7 +11,7 @@ class Plotter:
     def __init__(self):
         plt.rcParams['toolbar'] = 'None'
         plt.style.use('dark_background')
-    
+
     def annotate(self, sel):
         xvalue = mdates.num2date(sel.target[0]).strftime('%Y-%m-%d')
         yvalue = "{:.2f}".format(sel.target[1])
@@ -24,7 +24,7 @@ class Plotter:
             return True
         else:
             return False
-    
+
     def get_upward_sigma_count(self, mean, std, max_val):
         unmean = 0
         if max_val > mean:
@@ -33,10 +33,10 @@ class Plotter:
             return 0
         count = unmean // std + 2
         return int(count)
-    
+
     def convert_to_color(self, a):
         return "#" + str(hex(a)).lstrip("0x")
-        
+
     def increase_color_code(self, color, increment):
         return color + (0x10 * increment)
 
@@ -64,7 +64,7 @@ class Plotter:
             subplot.axhline(mean + std * i, \
                     color=self.convert_to_color(new_color_hex), \
                     linestyle='dashed', linewidth=0.5)
-    
+
     def draw_downward_std_line(self, subplot, mean, std, count, color):
         if count < 1:
             return

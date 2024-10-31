@@ -10,6 +10,10 @@ class ConfigFile:
         self.data = json.load(json_file)
         json_file.close()
 
+    def get_webdriver_path(self):
+        """ Get the webdriver path """
+        return self.data['WebDriver Path']
+
     def get_chart_configs(self, key):
         """ Get the list of chart configs in the data file """
         chart_configs = []

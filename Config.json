@@ -1,4 +1,5 @@
 {
+	"WebDriver Path" : "C:\\Users\\User\\WebDrivers\\geckodriver_win32\\geckodriver.exe",
 	"Plot data" : "int",
 	"Std. Dev." : "toggle",
 	"Charts" : 
